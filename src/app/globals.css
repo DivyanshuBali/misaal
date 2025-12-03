@@ -1,0 +1,27 @@
+/* RESET STYLES: Normalize + Custom Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100dvh;
+
+  /* set background texture */
+  background-image: url("/bg-texture.jpeg");
+  background-size: 500px 500px;
+  background-repeat: repeat;
+  
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  font-family: inherit;
+  text-decoration: none;
+}
