@@ -7,7 +7,7 @@
   padding: 1rem;
 
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
 
   z-index: 999;
@@ -15,7 +15,7 @@
   /* index and contact buttons */
   .actionButtons {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
 
     @media (max-width: 600px) {
       width: 100%;
@@ -36,6 +36,12 @@
 
     @media (max-width: 600px) {
       text-transform: lowercase;
+    }
+
+    img {
+      height: auto;
+      width: clamp(45px, 5vw, 60px);
+      display: block;
     }
   }
 }
