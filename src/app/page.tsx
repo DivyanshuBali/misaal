@@ -1,5 +1,13 @@
-import styles from "./page.module.css";
+import BottomNav from "@/components/BottomNav/BottomNav";
+import IntroAnimation from "./components/IntroAnimation/IntroAnimation";
 
 export default function Home() {
-  return <main className={styles.main}></main>;
+  return (
+    <>
+      <IntroAnimation>
+        <main></main>
+        <BottomNav />
+      </IntroAnimation>
+    </>
+  );
 }

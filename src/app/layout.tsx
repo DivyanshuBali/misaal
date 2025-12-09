@@ -1,7 +1,6 @@
 import "./globals.css";
 
 import type { Metadata } from "next";
-import BottomNav from "./components/BottomNav/BottomNav";
 import { Inter } from "next/font/google";
 
 export const metadata: Metadata = {
@@ -16,10 +15,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={inter.className}>
-      <body>
-        {children}
-        <BottomNav />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
