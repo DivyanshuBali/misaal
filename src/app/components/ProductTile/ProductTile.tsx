@@ -16,12 +16,12 @@ type Props = {
 function ProductTile(props: Props) {
   return (
     <div className={styles.productTile}>
-      <Link href={`/index/${props.id}`}>
+      <Link href={`/products/${props.id}`}>
         <Image
           src={props.banner_image_url}
           alt={`${props.title} image`}
-          width={300}
-          height={400}
+          width={200}
+          height={300}
         />
         <div className={styles.revealInfo}>
           <h4>{props.product_code}</h4>

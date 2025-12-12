@@ -3,7 +3,7 @@ import { supabase } from "@/lib/supabase";
 
 import styles from "./page.module.css";
 
-export default async function IndexPage() {
+export default async function ProductsPage() {
   const { data } = await supabase.from("products").select("*");
 
   return (
