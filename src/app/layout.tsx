@@ -1,33 +1,14 @@
 import "./globals.css";
 
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Inter } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "Misaal",
   description: "Misaal Studio",
 };
 
-const font = localFont({
-  src: [
-    {
-      path: "./fonts/Hikasami-Regular.ttf",
-      weight: "400",
-    },
-    {
-      path: "./fonts/Hikasami-Medium.ttf",
-      weight: "500",
-    },
-    {
-      path: "./fonts/Hikasami-SemiBold.ttf",
-      weight: "600",
-    },
-    {
-      path: "./fonts/Hikasami-Bold.ttf",
-      weight: "700",
-    },
-  ],
-});
+const font = Inter();
 
 export default function RootLayout({
   children,
