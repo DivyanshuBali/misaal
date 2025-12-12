@@ -4,7 +4,7 @@ function BottomNav() {
   return (
     <nav className={styles.bottomNav}>
       <div className={styles.actionButtons}>
-        <a href="#">INDEX</a>
+        <a href="/index">INDEX</a>
         <a href="#">CONTACT</a>
       </div>
       <div className={styles.logo}>
