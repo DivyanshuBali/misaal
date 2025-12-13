@@ -8,7 +8,7 @@ function BottomNav() {
         <a href="#">CONTACT</a>
       </div>
       <div className={styles.logo}>
-        <a href="#">
+        <a href="/">
           <img src={"/misaal-logo.png"} alt="misaal logo" />
         </a>
       </div>

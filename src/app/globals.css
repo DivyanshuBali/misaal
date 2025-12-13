@@ -20,6 +20,11 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+.intro-playing nav {
+  opacity: 0;
+  pointer-events: none;
+}
+
 a {
   color: inherit;
   font-family: inherit;

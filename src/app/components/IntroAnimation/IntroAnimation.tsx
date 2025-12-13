@@ -3,7 +3,8 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import styles from "./IntroAnimation.module.css";
-import Image from "next/image";
+import Lottie from "lottie-react";
+import misaalLogoAnimation from "../../../../public/animations/misaal-logo.json";
 
 export default function IntroAnimation({
   children,
@@ -21,8 +22,10 @@ export default function IntroAnimation({
     if (hasVisited) {
       setShowIntro(false);
       setShowContent(true);
+
+      // Remove the class immediately for returning visitors
+      document.body.classList.remove("intro-playing");
     } else {
-      sessionStorage.setItem("hasVisited", "true");
       // Trigger intro exit after animation completes
       const timer = setTimeout(() => {
         setShowIntro(false);
@@ -37,9 +40,19 @@ export default function IntroAnimation({
     return <div style={{ opacity: 0 }}>{children}</div>;
   }
 
+  // Check if user has already visited (sessionStorage is set)
+  const hasVisited = sessionStorage.getItem("hasVisited");
+
   return (
     <>
-      <AnimatePresence onExitComplete={() => setShowContent(true)}>
+      <AnimatePresence
+        onExitComplete={() => {
+          setShowContent(true);
+          document.body.classList.remove("intro-playing");
+          // Mark as visited AFTER intro completes
+          sessionStorage.setItem("hasVisited", "true");
+        }}
+      >
         {showIntro && (
           <motion.div
             key="intro"
@@ -48,27 +61,15 @@ export default function IntroAnimation({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1.5 }}
-            >
-              {/* Your logo SVG */}
-              <div>
-                <Image
-                  src="/misaal-logo.png"
-                  height={100}
-                  width={66}
-                  alt={"misaal logo loading animation"}
-                />
-              </div>
-            </motion.div>
+            <div className={styles.animationContainer}>
+              <Lottie animationData={misaalLogoAnimation} loop={true} />
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
 
       <motion.div
-        initial={{ opacity: 0 }}
+        initial={hasVisited ? { opacity: 1 } : { opacity: 0 }}
         animate={{ opacity: showContent ? 1 : 0 }}
         transition={{ duration: 0.8 }}
       >
