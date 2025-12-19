@@ -2,3 +2,11 @@
   height: 100dvh;
   width: 100%;
 }
+
+.productsListingLoader {
+  height: 100dvh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
