@@ -1,0 +1,51 @@
+.landingCard {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+
+  .catalogueMetaContainer {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 50%;
+    right: -40px;
+    transform: translate(0, 50%);
+    width: 150px;
+    background-color: #FFFFFF;
+    padding: 1rem;
+    border: 1.2px solid black;
+    transition: opacity 0.4s ease-in-out, visibility 0s 0s;
+
+    h4 {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+      align-items: center;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+
+      .divider {
+        border-bottom: 2px solid black;
+        flex: 1
+      }
+    }
+
+    div {
+      font-size: 10px;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+  }
+
+  &:hover {
+    .catalogueMetaContainer {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
