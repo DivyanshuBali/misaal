@@ -1,24 +1,21 @@
 /* COLOUR VARIABLES */
 :root {
 	/* Primary palette */
-	--color-primary: #2563eb;
-	--color-primary-hover: #1d4ed8;
-	--color-primary-muted: #dbeafe;
+	--color-primary: #253b76;
 
 	/* Secondary / accent */
-	--color-secondary: #64748b;
-	--color-accent: #0ea5e9;
+	--color-secondary: #a61e25;
 
 	/* Backgrounds */
 	--color-background: #faf9f6;
 
 	/* Text */
-	--color-text: #0f172a;
-	--color-text-muted: #64748b;
+	--color-text: #0f0d0d;
+	--color-text-muted: #e0dfdf;
 	--color-text-inverse: #ffffff;
 
 	/* Borders & dividers */
-	--color-border: #e2e8f0;
+	--color-border: #0f0d0d;
 	--color-border-strong: #cbd5e1;
 
 	/* Semantic */

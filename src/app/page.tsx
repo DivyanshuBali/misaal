@@ -16,7 +16,7 @@ export default function Home() {
             <Link href="#">archive</Link>
           </li>
           <li>
-            <Link href="#">logs</Link>
+            <Link href="/logs">logs</Link>
           </li>
           <li>
             <Link href="#">artefacts</Link>

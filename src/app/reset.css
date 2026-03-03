@@ -13,7 +13,6 @@
 
 /* 3. Improve line-height and prevent font-size inflation on mobile */
 html {
-	line-height: 1.5;
 	-webkit-text-size-adjust: 100%;
 	text-size-adjust: 100%;
 }

@@ -1,0 +1,39 @@
+.logsRoot {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100dvh;
+	width: 100%;
+	gap: 4rem;
+
+	.leftContainer {
+		flex: 1;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+
+		ol {
+			list-style: none;
+			display: flex;
+			width: fit-content;
+			flex-direction: column;
+
+			li {
+				font-size: 3rem;
+				font-weight: 800;
+				color: var(--color-text-muted);
+				cursor: pointer;
+
+				&:hover {
+					color: var(--color-text);
+				}
+			}
+		}
+	}
+
+	.rightContainer {
+		flex: 1;
+		height: 100%;
+	}
+}
