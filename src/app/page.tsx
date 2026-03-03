@@ -1,13 +1,31 @@
-import LandingCards from "./components/LandingCards/LandingCards";
+import Link from "next/link";
 import styles from "./page.module.css";
-import IntroAnimation from "@/components/IntroAnimation/IntroAnimation";
 
 export default function Home() {
   return (
-    <IntroAnimation>
-      <main className={styles.mainContainer}>
-        <LandingCards />
-      </main>
-    </IntroAnimation>
+    <main className={styles.mainContainer}>
+      <nav>
+        <ul>
+          <li>
+            <Link href="#">
+              mannat singh<sup>TM</sup>
+            </Link>
+          </li>
+          <div className={styles.divider} />
+          <li>
+            <Link href="#">archive</Link>
+          </li>
+          <li>
+            <Link href="#">logs</Link>
+          </li>
+          <li>
+            <Link href="#">artefacts</Link>
+          </li>
+          <li>
+            <Link href="#">about</Link>
+          </li>
+        </ul>
+      </nav>
+    </main>
   );
 }

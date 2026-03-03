@@ -1,43 +1,68 @@
+/* COLOUR VARIABLES */
+:root {
+	/* Primary palette */
+	--color-primary: #2563eb;
+	--color-primary-hover: #1d4ed8;
+	--color-primary-muted: #dbeafe;
+
+	/* Secondary / accent */
+	--color-secondary: #64748b;
+	--color-accent: #0ea5e9;
+
+	/* Backgrounds */
+	--color-background: #faf9f6;
+
+	/* Text */
+	--color-text: #0f172a;
+	--color-text-muted: #64748b;
+	--color-text-inverse: #ffffff;
+
+	/* Borders & dividers */
+	--color-border: #e2e8f0;
+	--color-border-strong: #cbd5e1;
+
+	/* Semantic */
+	--color-success: #22c55e;
+	--color-warning: #f59e0b;
+	--color-error: #ef4444;
+	--color-info: #3b82f6;
+}
+
 /* RESET STYLES: Normalize + Custom Reset */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 body {
-  height: 100dvh;
-
-  /* set background texture */
-  background-image: url("/bg-texture.jpeg");
-  background-size: 500px 500px;
-  background-repeat: repeat;
-  
-  -webkit-tap-highlight-color: transparent;
-}
-
-.intro-playing nav {
-  opacity: 0;
-  pointer-events: none;
+	height: 100dvh;
+	background-color: var(--color-background);
+	color: var(--color-text);
+	-webkit-tap-highlight-color: transparent;
 }
 
 a {
-  color: inherit;
-  font-family: inherit;
-  text-decoration: none;
+	color: inherit;
+	font-family: inherit;
+	text-decoration: none;
 }
 
+@media only screen and (max-width: 600px) {
+}
 
-@media only screen and (max-width: 600px) {}
+@media only screen and (max-width: 768px) {
+}
 
-@media only screen and (max-width: 768px) {}
+@media only screen and (max-width: 992px) {
+}
 
-@media only screen and (max-width: 992px) {}
+@media only screen and (max-width: 1200px) {
+}
 
-@media only screen and (max-width: 1200px) {}
-
-@media only screen and (max-width: 1920px) {}
+@media only screen and (max-width: 1920px) {
+}

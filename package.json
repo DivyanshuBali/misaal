@@ -1,5 +1,5 @@
 {
-  "name": "misaal",
+  "name": "MannatSinghTM",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -13,8 +13,7 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.87.1",
-    "gsap": "^3.14.2",
-    "lottie-react": "^2.4.1",
+    "firebase-admin": "^13.6.0",
     "motion": "^12.23.25",
     "next": "16.0.10",
     "react": "19.2.0",
