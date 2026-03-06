@@ -1,0 +1,45 @@
+.archiveRoot {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: 1;
+	min-height: 0;
+	width: 100%;
+	gap: 6rem;
+}
+
+.imageContainer {
+	position: relative;
+	width: 418px;
+	height: 627px;
+	flex-shrink: 0;
+}
+
+.archiveImage {
+	object-fit: cover;
+}
+
+.listContainer {
+	max-height: 500px;
+	overflow-y: auto;
+	width: 545px;
+	flex-shrink: 0;
+
+	ul {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+
+		li {
+			font-size: 3.125rem;
+			font-weight: 700;
+			color: var(--color-text-muted);
+			cursor: pointer;
+			line-height: 1.2;
+
+			&:hover {
+				color: var(--color-text);
+			}
+		}
+	}
+}
