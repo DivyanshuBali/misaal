@@ -141,9 +141,9 @@
 		font-size: 1rem;
 		color: #cac8c8;
 		transition: color 0.2s ease;
+	}
 
-		&:hover {
-			color: var(--color-text);
-		}
+	a:hover {
+		color: var(--color-text);
 	}
 }
