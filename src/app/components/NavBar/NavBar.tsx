@@ -10,7 +10,7 @@ export default function NavBar({ fullWidth = false }: NavBarProps) {
     <nav className={`${styles.nav} ${fullWidth ? styles.fullWidth : ""}`}>
       <ul>
         <li>
-          <Link href="#">
+          <Link href="/">
             mannat singh<sup>TM</sup>
           </Link>
         </li>
@@ -22,7 +22,7 @@ export default function NavBar({ fullWidth = false }: NavBarProps) {
           <Link href="/artefacts">artefacts</Link>
         </li>
         <li>
-          <Link href="#">about</Link>
+          <Link href="/about">about</Link>
         </li>
       </ul>
     </nav>
