@@ -1,10 +1,10 @@
-export type ArchiveItem = {
+export type ArtefactsItem = {
   id: string;
   name: string;
   image: string;
 };
 
-export const archiveItems: readonly ArchiveItem[] = [
+export const artefactsItems: readonly ArtefactsItem[] = [
   { id: "kail-das", name: "kail das", image: "/bg-texture.jpeg" },
   { id: "alta-das", name: "alta das", image: "/bg-texture.jpeg" },
   { id: "neel-das", name: "neel das", image: "/bg-texture.jpeg" },
@@ -12,7 +12,11 @@ export const archiveItems: readonly ArchiveItem[] = [
   { id: "sit-amet", name: "sit amet", image: "/bg-texture.jpeg" },
   { id: "faucibus-ex", name: "faucibus ex", image: "/bg-texture.jpeg" },
   { id: "adipiscing", name: "adipiscing", image: "/bg-texture.jpeg" },
-  { id: "vitae-pellentesque", name: "vitae pellentesque", image: "/bg-texture.jpeg" },
+  {
+    id: "vitae-pellentesque",
+    name: "vitae pellentesque",
+    image: "/bg-texture.jpeg",
+  },
   { id: "quisque", name: "quisque", image: "/bg-texture.jpeg" },
   { id: "sapien-elit", name: "sapien elit", image: "/bg-texture.jpeg" },
   { id: "das", name: "das", image: "/bg-texture.jpeg" },
@@ -21,7 +25,11 @@ export const archiveItems: readonly ArchiveItem[] = [
   { id: "sit-amet-2", name: "sit amet", image: "/bg-texture.jpeg" },
   { id: "faucibus-ex-2", name: "faucibus ex", image: "/bg-texture.jpeg" },
   { id: "adipiscing-2", name: "adipiscing", image: "/bg-texture.jpeg" },
-  { id: "vitae-pellentesque-2", name: "vitae pellentesque", image: "/bg-texture.jpeg" },
+  {
+    id: "vitae-pellentesque-2",
+    name: "vitae pellentesque",
+    image: "/bg-texture.jpeg",
+  },
   { id: "quisque-2", name: "quisque", image: "/bg-texture.jpeg" },
   { id: "sapien-elit-2", name: "sapien elit", image: "/bg-texture.jpeg" },
 ];

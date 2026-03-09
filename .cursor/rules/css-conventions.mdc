@@ -1,0 +1,49 @@
+---
+description: CSS Modules conventions — clean, readable styles with native nesting
+globs: "**/*.module.css"
+alwaysApply: false
+---
+
+# CSS Modules
+
+- Each component gets a colocated `*.module.css` file.
+- Import as `styles` and apply with `className={styles.myClass}`.
+- Use **camelCase** class names so they work as JS properties.
+
+# Write Clean CSS
+
+Keep styles simple, readable, and flat. Avoid deep abstractions or over-engineering. Prefer explicit properties over clever shorthands when clarity matters.
+
+# Native CSS Nesting
+
+Use CSS nesting to colocate related styles. Keep nesting shallow (2-3 levels max).
+
+```css
+/* ✅ Good — shallow, readable nesting */
+.card {
+  padding: 1rem;
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  &:hover {
+    background: var(--color-surface-hover);
+  }
+}
+
+/* ❌ Bad — too deep, hard to follow */
+.card {
+  .header {
+    .title {
+      span {
+        &:hover { ... }
+      }
+    }
+  }
+}
+```
+
+# Design Tokens
+
+Use CSS custom properties (e.g. `var(--color-text)`, `var(--color-text-muted)`) for colors and spacing instead of hard-coded values, when tokens are available.

@@ -1,0 +1,46 @@
+---
+description: Tech stack overview and server-first component architecture
+alwaysApply: true
+---
+
+# Tech Stack
+
+- **Framework:** Next.js 16 (App Router) with React 19
+- **Language:** TypeScript (strict mode)
+- **Styling:** CSS Modules with native CSS nesting
+- **Animation:** Motion (Framer Motion)
+- **Linting/Formatting:** Biome
+- **Backend services:** Supabase, Firebase Admin
+- **Images:** Cloudinary via `next/image`
+
+# Server-First Components
+
+Default to React Server Components. Only add `"use client"` when the component genuinely needs client-side hooks (`useState`, `useEffect`, `useRef`, etc.) or browser APIs.
+
+When a page needs interactivity, keep the page/layout as a server component and extract the interactive parts into small, focused client components.
+
+```tsx
+// page.tsx — server component (no "use client")
+import { InteractiveWidget } from "./InteractiveWidget";
+
+export default async function Page() {
+  const data = await fetchData();
+  return (
+    <main>
+      <h1>{data.title}</h1>
+      <InteractiveWidget items={data.items} />
+    </main>
+  );
+}
+```
+
+```tsx
+// InteractiveWidget.tsx — client component (isolated)
+"use client";
+import { useState } from "react";
+
+export function InteractiveWidget({ items }: { items: Item[] }) {
+  const [active, setActive] = useState(0);
+  return <div>...</div>;
+}
+```

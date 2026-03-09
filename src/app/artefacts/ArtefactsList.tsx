@@ -2,11 +2,11 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { ArchiveItem } from "./archives";
+import type { ArtefactsItem } from "./archives";
 import styles from "./page.module.css";
 
-export function ArchiveList({ items }: { items: readonly ArchiveItem[] }) {
-  const [hoveredItem, setHoveredItem] = useState<ArchiveItem | null>(null);
+export function ArtefactsList({ items }: { items: readonly ArtefactsItem[] }) {
+  const [hoveredItem, setHoveredItem] = useState<ArtefactsItem | null>(null);
   const hoverTimerRef = useRef<number | null>(null);
 
   const clearHoverTimer = useCallback(() => {
@@ -16,7 +16,7 @@ export function ArchiveList({ items }: { items: readonly ArchiveItem[] }) {
     }
   }, []);
 
-  function handleMouseEnter(item: ArchiveItem) {
+  function handleMouseEnter(item: ArtefactsItem) {
     clearHoverTimer();
     hoverTimerRef.current = window.setTimeout(() => {
       setHoveredItem(item);
