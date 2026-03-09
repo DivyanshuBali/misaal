@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { ArtefactsItem } from "./archives";
 import styles from "./page.module.css";
@@ -56,7 +57,7 @@ export function ArtefactsList({ items }: { items: readonly ArtefactsItem[] }) {
               onMouseEnter={() => handleMouseEnter(item)}
               onMouseLeave={handleMouseLeave}
             >
-              {item.name}
+              <Link href={`/artefacts/${item.id}`}>{item.name}</Link>
             </li>
           ))}
         </ul>
