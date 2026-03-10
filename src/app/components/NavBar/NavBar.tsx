@@ -22,7 +22,7 @@ export default function NavBar({ fullWidth = false }: NavBarProps) {
           <Link href="/artefacts">artefacts</Link>
         </li>
         <li>
-          <Link href="/about">about</Link>
+          <Link href="/almanac">about</Link>
         </li>
       </ul>
     </nav>
