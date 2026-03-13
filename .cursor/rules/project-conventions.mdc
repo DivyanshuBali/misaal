@@ -10,7 +10,7 @@ alwaysApply: true
 - **Styling:** CSS Modules with native CSS nesting
 - **Animation:** Motion (Framer Motion)
 - **Linting/Formatting:** Biome
-- **Backend services:** Supabase, Firebase Admin
+- **Backend services:** Firebase Admin
 - **Images:** Cloudinary via `next/image`
 
 # Server-First Components

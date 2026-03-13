@@ -34,7 +34,7 @@ export function ArtefactDetail({ item }: { item: ArtefactsItem }) {
         <div className={styles.imageFrame}>
           <Image
             src={item.images[imageIndex]}
-            alt={item.name}
+            alt={item.title}
             fill
             className={styles.artefactImage}
           />
@@ -70,7 +70,7 @@ export function ArtefactDetail({ item }: { item: ArtefactsItem }) {
               <span>{item.code.split("—")[1]?.trim()}</span>
             </div>
             <div className={styles.details}>
-              <p>{item.name}</p>
+              <p>{item.title}</p>
               <p>{item.year}</p>
             </div>
           </div>
@@ -82,8 +82,8 @@ export function ArtefactDetail({ item }: { item: ArtefactsItem }) {
             {item.tags.length > 0 && (
               <div className={styles.tags}>
                 {item.tags.map((tag) => (
-                  <span key={tag} className={styles.tag}>
-                    {tag}
+                  <span key={tag.id} className={styles.tag}>
+                    {tag.name}
                   </span>
                 ))}
               </div>

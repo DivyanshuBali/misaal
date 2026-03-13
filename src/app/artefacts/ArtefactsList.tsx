@@ -41,8 +41,8 @@ export function ArtefactsList({ items }: { items: readonly ArtefactsItem[] }) {
       <section className={styles.imageContainer}>
         {hoveredItem && (
           <Image
-            src={hoveredItem.image}
-            alt={hoveredItem.name}
+            src={hoveredItem.bannerImage}
+            alt={hoveredItem.title}
             fill
             className={styles.archiveImage}
           />
@@ -57,7 +57,7 @@ export function ArtefactsList({ items }: { items: readonly ArtefactsItem[] }) {
               onMouseEnter={() => handleMouseEnter(item)}
               onMouseLeave={handleMouseLeave}
             >
-              <Link href={`/artefacts/${item.id}`}>{item.name}</Link>
+              <Link href={`/artefacts/${item.id}`}>{item.title}</Link>
             </li>
           ))}
         </ul>

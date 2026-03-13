@@ -1,8 +1,17 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { artefactsItems } from "../archives";
+import { Suspense } from "react";
+import { getArtefactById } from "@/lib/firestore";
 import { ArtefactDetail } from "./ArtefactDetail";
 import styles from "./page.module.css";
+
+async function ArtefactContent({ id }: { id: string }) {
+  const item = await getArtefactById(id);
+
+  if (!item) notFound();
+
+  return <ArtefactDetail item={item} />;
+}
 
 export default async function ArtefactPage({
   params,
@@ -10,14 +19,13 @@ export default async function ArtefactPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const item = artefactsItems.find((a) => a.id === id);
-
-  if (!item) notFound();
 
   return (
     <>
       <main className={styles.detailRoot}>
-        <ArtefactDetail item={item} />
+        <Suspense>
+          <ArtefactContent id={id} />
+        </Suspense>
       </main>
       <div className={styles.backLink}>
         <Link href="/artefacts">back</Link>
