@@ -65,9 +65,9 @@ export function ArtefactDetail({ item }: { item: ArtefactsItem }) {
         <div className={styles.infoContent}>
           <div>
             <div className={styles.titleRow}>
-              <span>{item.code.split("—")[0]?.trim()}</span>
+              <span>{item.code.split("-")[0]?.trim()}</span>
               <div className={styles.titleDash} />
-              <span>{item.code.split("—")[1]?.trim()}</span>
+              <span>{item.code.split("-")[1]?.trim()}</span>
             </div>
             <div className={styles.details}>
               <p>{item.title}</p>
@@ -76,9 +76,15 @@ export function ArtefactDetail({ item }: { item: ArtefactsItem }) {
           </div>
 
           <div className={styles.descriptionAndTags}>
-            {item.description && (
-              <p className={styles.description}>{item.description}</p>
-            )}
+            <div>
+              {item.description.length > 0
+                ? item.description.map((description) => (
+                    <p key={description} className={styles.description}>
+                      {description}
+                    </p>
+                  ))
+                : null}
+            </div>
             {item.tags.length > 0 && (
               <div className={styles.tags}>
                 {item.tags.map((tag) => (

@@ -16,7 +16,7 @@
 }
 
 .artefactsImage {
-	object-fit: cover;
+	object-fit: contain;
 }
 
 .listContainer {

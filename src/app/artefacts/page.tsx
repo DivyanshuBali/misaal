@@ -5,7 +5,6 @@ import styles from "./page.module.css";
 
 async function ArtefactsContent() {
   const items = await getArtefacts();
-  console.log(items);
 
   return <ArtefactsList items={items} />;
 }

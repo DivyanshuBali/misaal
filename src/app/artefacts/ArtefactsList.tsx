@@ -2,39 +2,20 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import type { ArtefactsItem } from "./archives";
 import styles from "./page.module.css";
 
 export function ArtefactsList({ items }: { items: readonly ArtefactsItem[] }) {
   const [hoveredItem, setHoveredItem] = useState<ArtefactsItem | null>(null);
-  const hoverTimerRef = useRef<number | null>(null);
-
-  const clearHoverTimer = useCallback(() => {
-    if (hoverTimerRef.current !== null) {
-      window.clearTimeout(hoverTimerRef.current);
-      hoverTimerRef.current = null;
-    }
-  }, []);
 
   function handleMouseEnter(item: ArtefactsItem) {
-    clearHoverTimer();
-    hoverTimerRef.current = window.setTimeout(() => {
-      setHoveredItem(item);
-      hoverTimerRef.current = null;
-    }, 300);
+    setHoveredItem(item);
   }
 
   function handleMouseLeave() {
-    clearHoverTimer();
     setHoveredItem(null);
   }
-
-  useEffect(() => {
-    return () => {
-      clearHoverTimer();
-    };
-  }, [clearHoverTimer]);
 
   return (
     <>
@@ -44,7 +25,7 @@ export function ArtefactsList({ items }: { items: readonly ArtefactsItem[] }) {
             src={hoveredItem.bannerImage}
             alt={hoveredItem.title}
             fill
-            className={styles.archiveImage}
+            className={styles.artefactsImage}
           />
         )}
       </section>
