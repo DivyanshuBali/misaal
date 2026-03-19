@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import { Loader } from "@/components/Loader/Loader";
 import { getArtefacts } from "@/lib/firestore";
 import { ArtefactsList } from "./ArtefactsList";
 import styles from "./page.module.css";
@@ -12,7 +13,7 @@ async function ArtefactsContent() {
 export default function ArtefactsPage() {
   return (
     <main className={styles.artefactsRoot}>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loader />}>
         <ArtefactsContent />
       </Suspense>
     </main>

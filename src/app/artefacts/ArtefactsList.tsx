@@ -43,6 +43,26 @@ export function ArtefactsList({ items }: { items: readonly ArtefactsItem[] }) {
           ))}
         </ul>
       </section>
+
+      <section className={styles.mobileCards}>
+        {items.map((item) => (
+          <Link
+            key={item.id}
+            href={`/artefacts/${item.id}`}
+            className={styles.mobileCard}
+          >
+            <div className={styles.mobileCardImage}>
+              <Image
+                src={item.bannerImage}
+                alt={item.title}
+                fill
+                className={styles.artefactsImage}
+              />
+            </div>
+            <p className={styles.mobileCardTitle}>{item.title}</p>
+          </Link>
+        ))}
+      </section>
     </>
   );
 }

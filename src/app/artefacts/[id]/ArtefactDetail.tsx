@@ -1,14 +1,30 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import type { ArtefactsItem } from "../archives";
 import styles from "./page.module.css";
 
+const SWIPE_THRESHOLD = 50;
+
 export function ArtefactDetail({ item }: { item: ArtefactsItem }) {
   const [imageIndex, setImageIndex] = useState(0);
+  const touchStartX = useRef(0);
   const hasPrev = imageIndex > 0;
   const hasNext = imageIndex < item.images.length - 1;
+
+  function handleTouchStart(e: React.TouchEvent) {
+    touchStartX.current = e.touches[0].clientX;
+  }
+
+  function handleTouchEnd(e: React.TouchEvent) {
+    const delta = touchStartX.current - e.changedTouches[0].clientX;
+    if (delta > SWIPE_THRESHOLD && hasNext) {
+      setImageIndex((i) => i + 1);
+    } else if (delta < -SWIPE_THRESHOLD && hasPrev) {
+      setImageIndex((i) => i - 1);
+    }
+  }
 
   return (
     <div className={styles.content}>
@@ -31,7 +47,11 @@ export function ArtefactDetail({ item }: { item: ArtefactsItem }) {
           </svg>
         </button>
 
-        <div className={styles.imageFrame}>
+        <div
+          className={styles.imageFrame}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
           <Image
             src={item.images[imageIndex]}
             alt={item.title}
@@ -59,41 +79,54 @@ export function ArtefactDetail({ item }: { item: ArtefactsItem }) {
         </button>
       </div>
 
-      <div className={styles.divider} />
+      {item.images.length > 1 && (
+        <div className={styles.dots}>
+          {item.images.map((_, i) => (
+            <span
+              key={item.images[i]}
+              className={`${styles.dot} ${i === imageIndex ? styles.dotActive : ""}`}
+            />
+          ))}
+        </div>
+      )}
 
-      <div className={styles.info}>
-        <div className={styles.infoContent}>
-          <div>
-            <div className={styles.titleRow}>
-              <span>{item.code.split("-")[0]?.trim()}</span>
-              <div className={styles.titleDash} />
-              <span>{item.code.split("-")[1]?.trim()}</span>
-            </div>
-            <div className={styles.details}>
-              <p>{item.title}</p>
-              <p>{item.year}</p>
-            </div>
-          </div>
+      <div className={styles.infoWithDivider}>
+        <div className={styles.divider} />
 
-          <div className={styles.descriptionAndTags}>
+        <div className={styles.info}>
+          <div className={styles.infoContent}>
             <div>
-              {item.description.length > 0
-                ? item.description.map((description) => (
-                    <p key={description} className={styles.description}>
-                      {description}
-                    </p>
-                  ))
-                : null}
-            </div>
-            {item.tags.length > 0 && (
-              <div className={styles.tags}>
-                {item.tags.map((tag) => (
-                  <span key={tag.id} className={styles.tag}>
-                    {tag.name}
-                  </span>
-                ))}
+              <div className={styles.titleRow}>
+                <span>{item.code.split("-")[0]?.trim()}</span>
+                <div className={styles.titleDash} />
+                <span>{item.code.split("-")[1]?.trim()}</span>
               </div>
-            )}
+              <div className={styles.details}>
+                <p>{item.title}</p>
+                <p>{item.year}</p>
+              </div>
+            </div>
+
+            <div className={styles.descriptionAndTags}>
+              <div>
+                {item.description.length > 0
+                  ? item.description.map((description) => (
+                      <p key={description} className={styles.description}>
+                        {description}
+                      </p>
+                    ))
+                  : null}
+              </div>
+              {item.tags.length > 0 && (
+                <div className={styles.tags}>
+                  {item.tags.map((tag) => (
+                    <span key={tag.id} className={styles.tag}>
+                      {tag.name}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>

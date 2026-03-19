@@ -1,3 +1,4 @@
+import { BottomNav } from "@/components/NavBar/BottomNav";
 import NavBar from "@/components/NavBar/NavBar";
 import styles from "./layout.module.css";
 
@@ -8,6 +9,7 @@ export default function RootLayout({
     <div className={styles.logsLayout}>
       <NavBar fullWidth />
       {children}
+      <BottomNav />
     </div>
   );
 }

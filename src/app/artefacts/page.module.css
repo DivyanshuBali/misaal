@@ -6,13 +6,22 @@
 	min-height: 0;
 	width: 100%;
 	gap: 6rem;
+
+	@media (max-width: 768px) {
+		display: block;
+	}
 }
 
 .imageContainer {
 	position: relative;
-	width: 418px;
-	height: 627px;
+	max-width: 418px;
+	width: 35%;
+	aspect-ratio: 2 / 3;
 	flex-shrink: 0;
+
+	@media (max-width: 768px) {
+		display: none;
+	}
 }
 
 .artefactsImage {
@@ -22,7 +31,8 @@
 .listContainer {
 	max-height: 500px;
 	overflow-y: auto;
-	width: 545px;
+	max-width: 545px;
+	width: 40%;
 	flex-shrink: 0;
 
 	ul {
@@ -42,4 +52,40 @@
 			}
 		}
 	}
+
+	@media (max-width: 768px) {
+		display: none;
+	}
+}
+
+.mobileCards {
+	display: none;
+
+	@media (max-width: 768px) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1.875rem;
+		padding: 1rem 0 2rem;
+	}
+}
+
+.mobileCard {
+	display: flex;
+	flex-direction: column;
+	gap: 0.625rem;
+	width: 67%;
+}
+
+.mobileCardImage {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 2 / 3;
+}
+
+.mobileCardTitle {
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: var(--color-text);
+	line-height: 1.25;
 }
