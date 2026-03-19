@@ -1,0 +1,81 @@
+.detailRoot {
+	flex: 1;
+	overflow-y: auto;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	padding: 3rem 2rem 2rem;
+	gap: 2rem;
+
+	@media (max-width: 768px) {
+		padding: 1.5rem 1.5rem 2rem;
+		gap: 1.5rem;
+	}
+}
+
+.imageFrame {
+	position: relative;
+	width: 50%;
+	max-width: 500px;
+	aspect-ratio: 4 / 3;
+
+	@media (max-width: 768px) {
+		width: 100%;
+		max-width: none;
+	}
+}
+
+.studyImage {
+	object-fit: contain;
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
+	width: 55%;
+	max-width: 560px;
+	gap: 0.25rem;
+
+	@media (max-width: 768px) {
+		width: 100%;
+		max-width: none;
+	}
+}
+
+.title {
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: var(--color-secondary);
+	line-height: 1.3;
+}
+
+.code {
+	font-size: 0.75rem;
+	font-weight: 700;
+	color: var(--color-text);
+	line-height: 1.4;
+}
+
+.description {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	margin-top: 0.75rem;
+
+	p {
+		font-size: 0.75rem;
+		font-weight: 300;
+		line-height: 1.7;
+		color: var(--color-text);
+	}
+
+	@media (max-width: 768px) {
+		p {
+			text-align: justify;
+		}
+	}
+}

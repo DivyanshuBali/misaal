@@ -1,0 +1,91 @@
+.logsRoot {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: 1;
+	min-height: 0;
+	width: 100%;
+	gap: 6rem;
+
+	@media (max-width: 768px) {
+		display: block;
+	}
+}
+
+.listContainer {
+	max-height: 500px;
+	overflow-y: auto;
+	max-width: 545px;
+	width: 40%;
+	flex-shrink: 0;
+
+	ol {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+
+		li {
+			font-size: 3.125rem;
+			font-weight: 700;
+			color: var(--color-text-muted);
+			cursor: pointer;
+			line-height: 1.2;
+
+			&:hover {
+				color: var(--color-text);
+			}
+		}
+	}
+
+	@media (max-width: 768px) {
+		display: none;
+	}
+}
+
+.imageContainer {
+	position: relative;
+	max-width: 418px;
+	width: 35%;
+	aspect-ratio: 2 / 3;
+	flex-shrink: 0;
+
+	@media (max-width: 768px) {
+		display: none;
+	}
+}
+
+.logImage {
+	object-fit: contain;
+}
+
+.mobileCards {
+	display: none;
+
+	@media (max-width: 768px) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1.875rem;
+		padding: 1rem 0 2rem;
+	}
+}
+
+.mobileCard {
+	display: flex;
+	flex-direction: column;
+	gap: 0.625rem;
+	width: 67%;
+}
+
+.mobileCardImage {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 2 / 3;
+}
+
+.mobileCardTitle {
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: var(--color-text);
+	line-height: 1.25;
+}

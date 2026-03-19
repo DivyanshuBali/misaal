@@ -22,16 +22,18 @@ export default function NavBar({ fullWidth = false }: NavBarProps) {
         {!fullWidth && <div className={styles.divider} />}
         <li>
           <Link
-            href="/logs"
-            className={pathname === "/logs" ? styles.muted : undefined}
+            href="/studies"
+            className={pathname.includes("/studies") ? styles.muted : undefined}
           >
-            logs
+            studies
           </Link>
         </li>
         <li>
           <Link
             href="/artefacts"
-            className={pathname === "/artefacts" ? styles.muted : undefined}
+            className={
+              pathname.includes("/artefacts") ? styles.muted : undefined
+            }
           >
             artefacts
           </Link>
@@ -39,7 +41,7 @@ export default function NavBar({ fullWidth = false }: NavBarProps) {
         <li>
           <Link
             href="/about"
-            className={pathname === "/about" ? styles.muted : undefined}
+            className={pathname.includes("/about") ? styles.muted : undefined}
           >
             about
           </Link>

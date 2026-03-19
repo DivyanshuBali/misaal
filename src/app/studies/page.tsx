@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import { Loader } from "@/components/Loader/Loader";
 import { getLogs } from "@/lib/firestore";
 import { LogsLayout } from "./LogsLayout";
 import styles from "./page.module.css";
@@ -12,7 +13,7 @@ async function LogsContent() {
 export default function LogsPage() {
   return (
     <main className={styles.logsRoot}>
-      <Suspense>
+      <Suspense fallback={<Loader />}>
         <LogsContent />
       </Suspense>
     </main>

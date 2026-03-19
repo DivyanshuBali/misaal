@@ -9,12 +9,10 @@ const sections: AccordionSection[] = [
     content: (
       <div className={styles.prose}>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-          ultricies consectetur elit id iaculis. Aenean auctor, orci a accumsan
-          tristique, ex leo vehicula augue, id dignissim justo orci facilisis
-          turpis. Donec sagittis, leo vitae interdum convallis, lectus elit
-          tristique lectus, in consequat purus odio id ipsum. Duis maximus felis
-          sed lectus fermentum, in vehicula sapien lobortis.
+          I am convinced in the power of fiction. Through imagination, the
+          architect composes the materials to create the immaterial. his ability
+          to stir sense of wonder in all who encounter it is that which inspires
+          me.
         </p>
       </div>
     ),
@@ -24,29 +22,28 @@ const sections: AccordionSection[] = [
     content: (
       <div className={styles.prose}>
         <p>
-          Aliquam nec accumsan ante, sit amet iaculis erat. Integer lacinia,
-          ipsum in convallis viverra, tortor tortor dignissim massa, a venenatis
-          odio massa vel tortor. Phasellus nulla nisl, molestie mollis mollis
-          id, sodales quis odio. Etiam molestie sollicitudin neque, eu vulputate
-          ipsum mattis congue. Integer fringilla enim massa, non efficitur purus
-          molestie id. Proin ullamcorper tellus dignissim augue auctor
-          condimentum. Nam in quam non quam bibendum tempor. Nulla purus nunc,
-          auctor quis luctus venenatis, fermentum ut ligula. Cras eu elit sit
-          amet turpis feugiat euismod. Curabitur blandit lacinia tortor nec
-          pretium.
+          Mannat Singh is an architect based in Chandigarh. He graduated with a
+          gold medal from the Faculty of Architecture at CEPT University, where
+          he also served as a program ambassador and was the founding chief
+          editor of the college newsletter. He is currently leading projects at
+          Imarat Architects, a practice engaged with questions of material
+          culture and construction.
         </p>
         <p>
-          Nulla nec magna velit. Praesent mollis lacus eu tempus consectetur.
-          Nunc magna urna, hendrerit ac arcu id, facilisis scelerisque libero.
-          Nulla sagittis tortor neque, vitae pulvinar nibh fringilla non. Donec
-          arcu lorem, convallis non justo sed, scelerisque elementum felis. Nunc
-          ut massa posuere, feugiat est non, faucibus nunc. Proin pulvinar
-          tincidunt nibh. Praesent porttitor orci ligula, et rhoncus ex aliquet
-          non. Mauris efficitur scelerisque aliquet. In hac habitasse platea
-          dictumst. Cras interdum, est at luctus rhoncus, magna eros blandit
-          nibh, at sagittis massa ipsum id magna. Donec cursus, urna vitae
-          placerat placerat, erat massa molestie massa, vel vestibulum massa
-          augue a orci. Phasellus ultricies sed libero in pretium.
+          His work extends across buildings, furniture, objects, and garments he
+          constructs for himself—approaching each as a way of thinking through
+          material, construction, and use. Alongside this, his drawings and
+          writings return to historical environments and their transformations
+          over time, treating them as active sites of inquiry rather than static
+          references.
+        </p>
+        <p>
+          He is currently working with schools of architecture across the
+          country and undertaking documentation of relevant sites, developing
+          these inquiries through a self-directed research practice. This has
+          taken form as MISAAL, a research-based making studio that brings
+          together processes of redrawing and construction to study and rework
+          architectural intelligence into contemporary projects and artefacts.
         </p>
       </div>
     ),
@@ -95,7 +92,21 @@ const sections: AccordionSection[] = [
           misaal (modern indian studies on art architecture and life) attempts
           to discover architecture from outside the discipline, in objects,
           habits and fictions. The knowledge that surfaces is translated into
-          design – across scales, from the intimate to the inhabitable.
+          design - across scales, from the intimate to the inhabitable.
+        </p>
+        <p>Misaal incorporates a two-pronged method of study and making.</p>
+        <p>
+          It studies the Indian imagination as it is located across paintings,
+          places—both historical and contemporary—habits, and objects. And then
+          examines them across five lenses: composition, construction, context,
+          intent, and chromatics; in order to isolate the architectural
+          intelligence embedded within them.
+        </p>
+        <p>
+          These extracted intelligibilities are reworked into projects and
+          artefacts, developed in close collaboration with artisans and informed
+          equally by contemporary and historical material cultures; varying in
+          scale but rooted in inquiry.
         </p>
         <a href="https://misaal.co" className={styles.misaalLink}>
           misaal.co
@@ -132,16 +143,7 @@ export default function AboutPage() {
           <Accordion sections={sections} defaultOpenIndex={0} />
         </div>
         <div className={styles.right}>
-          <div className={styles.imageWrapper}>
-            <Image
-              src="/bg-texture.jpeg"
-              alt="About Misaal"
-              fill
-              sizes="(max-width: 768px) 100vw, 40vw"
-              className={styles.image}
-              priority
-            />
-          </div>
+          <div className={styles.imageWrapper}></div>
         </div>
       </div>
     </main>
