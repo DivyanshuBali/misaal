@@ -44,7 +44,6 @@
 			font-size: 3.125rem;
 			font-weight: 700;
 			color: var(--color-text-muted);
-			cursor: pointer;
 			line-height: 1.2;
 
 			&:hover {

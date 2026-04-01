@@ -2,7 +2,6 @@
 	flex: 1;
 	display: flex;
 	overflow: hidden;
-	padding: 2rem 0;
 
 	@media (max-width: 768px) {
 		overflow: visible;
@@ -21,40 +20,22 @@
 .left {
 	flex: 1;
 	display: flex;
-	align-items: flex-start;
-	padding: 0 2rem 2rem;
-	overflow-y: auto;
+	justify-content: end;
 
 	@media (max-width: 768px) {
 		order: 2;
-		padding: 0 1.5rem 1.5rem;
 	}
 }
 
-.right {
-	flex: 1;
-	display: flex;
-	align-items: center;
-	padding: 2rem 0;
-
-	@media (max-width: 768px) {
-		order: 1;
-	}
-}
-
-.imageWrapper {
-	position: relative;
+.leftContent {
+	margin: 0 2rem 0 0;
 	width: 80%;
-	aspect-ratio: 1 / 2;
+	max-width: 600px;
 
 	@media (max-width: 768px) {
 		width: 100%;
-		aspect-ratio: 1 / 2;
+		margin: 0 1.5rem 1.5rem;
 	}
-}
-
-.image {
-	object-fit: contain;
 }
 
 /* Section content styles */
@@ -156,5 +137,27 @@
 		color: var(--color-secondary);
 		text-decoration: underline;
 		text-underline-offset: 2px;
+	}
+}
+
+/* Right Section */
+.right {
+	flex: 1;
+
+	@media (max-width: 768px) {
+		order: 1;
+		margin-bottom: 2rem;
+	}
+}
+
+.imageWrapper {
+	position: relative;
+	min-width: 300px;
+	max-width: 600px;
+	margin-right: 1.5rem;
+	aspect-ratio: 3 / 2;
+
+	@media (max-width: 768px) {
+		margin: 0 1.5rem;
 	}
 }

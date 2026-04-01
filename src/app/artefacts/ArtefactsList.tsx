@@ -33,13 +33,14 @@ export function ArtefactsList({ items }: { items: readonly ArtefactsItem[] }) {
       <section className={styles.listContainer}>
         <ul>
           {items.map((item) => (
-            <li
-              key={item.id}
-              onMouseEnter={() => handleMouseEnter(item)}
-              onMouseLeave={handleMouseLeave}
-            >
-              <Link href={`/artefacts/${item.id}`}>{item.title}</Link>
-            </li>
+            <Link key={item.id} href={`/artefacts/${item.id}`}>
+              <li
+                onMouseEnter={() => handleMouseEnter(item)}
+                onMouseLeave={handleMouseLeave}
+              >
+                {item.title}
+              </li>
+            </Link>
           ))}
         </ul>
       </section>

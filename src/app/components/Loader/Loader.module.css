@@ -1,6 +1,6 @@
 .dot {
-	width: 16px;
-	height: 16px;
+	width: 8px;
+	height: 8px;
 	border-radius: 50%;
 	background-color: var(--color-text-secondary, var(--color-secondary));
 	animation: breathe 1.4s ease-in-out infinite;

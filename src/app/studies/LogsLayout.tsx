@@ -29,13 +29,14 @@ export function LogsLayout({ logs }: { logs: readonly LogItem[] }) {
       <section className={styles.listContainer}>
         <ol>
           {logs.map((log) => (
-            <li
-              key={log.code}
-              onMouseEnter={() => handleMouseEnter(log)}
-              onMouseLeave={handleMouseLeave}
-            >
-              <Link href={`/studies/${log.id}`}>{log.title}</Link>
-            </li>
+            <Link key={log.code} href={`/studies/${log.id}`}>
+              <li
+                onMouseEnter={() => handleMouseEnter(log)}
+                onMouseLeave={handleMouseLeave}
+              >
+                {log.title}
+              </li>
+            </Link>
           ))}
         </ol>
       </section>
@@ -62,7 +63,8 @@ export function LogsLayout({ logs }: { logs: readonly LogItem[] }) {
               <Image
                 src={log.bannerImage}
                 alt={log.title}
-                fill
+                width={100}
+                height={100}
                 className={styles.logImage}
               />
             </div>

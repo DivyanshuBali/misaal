@@ -140,10 +140,19 @@ export default function AboutPage() {
     <main className={styles.aboutRoot}>
       <div className={styles.content}>
         <div className={styles.left}>
-          <Accordion sections={sections} defaultOpenIndex={0} />
+          <div className={styles.leftContent}>
+            <Accordion sections={sections} defaultOpenIndex={0} />
+          </div>
         </div>
         <div className={styles.right}>
-          <div className={styles.imageWrapper}></div>
+          <div className={styles.imageWrapper}>
+            <Image
+              src="/mannat_studio.jpeg"
+              alt="Background texture"
+              fill
+              className={styles.image}
+            />
+          </div>
         </div>
       </div>
     </main>
