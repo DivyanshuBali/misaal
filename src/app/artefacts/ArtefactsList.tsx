@@ -56,8 +56,10 @@ export function ArtefactsList({ items }: { items: readonly ArtefactsItem[] }) {
               <Image
                 src={item.bannerImage}
                 alt={item.title}
-                fill
-                className={styles.artefactsImage}
+                width={800}
+                height={1200}
+                sizes="67vw"
+                className={styles.mobileImage}
               />
             </div>
             <p className={styles.mobileCardTitle}>{item.title}</p>

@@ -9,9 +9,15 @@ const SWIPE_THRESHOLD = 50;
 
 export function ArtefactDetail({ item }: { item: ArtefactsItem }) {
   const [imageIndex, setImageIndex] = useState(0);
+  const [imageLoading, setImageLoading] = useState(true);
   const touchStartX = useRef(0);
   const hasPrev = imageIndex > 0;
   const hasNext = imageIndex < item.images.length - 1;
+
+  function navigate(next: number) {
+    setImageLoading(true);
+    setImageIndex(next);
+  }
 
   function handleTouchStart(e: React.TouchEvent) {
     touchStartX.current = e.touches[0].clientX;
@@ -20,9 +26,9 @@ export function ArtefactDetail({ item }: { item: ArtefactsItem }) {
   function handleTouchEnd(e: React.TouchEvent) {
     const delta = touchStartX.current - e.changedTouches[0].clientX;
     if (delta > SWIPE_THRESHOLD && hasNext) {
-      setImageIndex((i) => i + 1);
+      navigate(imageIndex + 1);
     } else if (delta < -SWIPE_THRESHOLD && hasPrev) {
-      setImageIndex((i) => i - 1);
+      navigate(imageIndex - 1);
     }
   }
 
@@ -33,7 +39,7 @@ export function ArtefactDetail({ item }: { item: ArtefactsItem }) {
           type="button"
           className={styles.navButton}
           disabled={!hasPrev}
-          onClick={() => setImageIndex((i) => i - 1)}
+          onClick={() => navigate(imageIndex - 1)}
           aria-label="Previous image"
         >
           <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
@@ -52,11 +58,14 @@ export function ArtefactDetail({ item }: { item: ArtefactsItem }) {
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
+          {imageLoading && <div className={styles.imageSkeleton} />}
           <Image
+            key={item.images[imageIndex]}
             src={item.images[imageIndex]}
             alt={item.title}
             fill
-            className={styles.artefactImage}
+            className={`${styles.artefactImage} ${imageLoading ? styles.artefactImageLoading : ""}`}
+            onLoad={() => setImageLoading(false)}
           />
         </div>
 

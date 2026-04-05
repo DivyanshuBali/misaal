@@ -63,9 +63,10 @@ export function LogsLayout({ logs }: { logs: readonly LogItem[] }) {
               <Image
                 src={log.bannerImage}
                 alt={log.title}
-                width={100}
-                height={100}
-                className={styles.logImage}
+                width={800}
+                height={1200}
+                sizes="67vw"
+                className={styles.mobileImage}
               />
             </div>
             <p className={styles.mobileCardTitle}>{log.title}</p>
