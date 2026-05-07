@@ -5,8 +5,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 
 export const metadata: Metadata = {
-  title: "Misaal",
-  description: "Misaal Studio",
+  title: "Mannat Singh™",
+  description: "Mannat Singh TM",
 };
 
 const font = localFont({
@@ -30,6 +30,14 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={font.className}>
+      <head>
+        <link
+          rel="preconnect"
+          href="https://res.cloudinary.com"
+          crossOrigin=""
+        />
+        <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+      </head>
       <body>{children}</body>
     </html>
   );

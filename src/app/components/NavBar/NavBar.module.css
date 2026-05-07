@@ -26,8 +26,12 @@
 				font-size: 1.5rem;
 				font-weight: 800;
 
+				&:hover {
+					color: var(--color-text-muted);
+				}
+
 				&.muted {
-					color: #CAC8C8;
+					color: #cac8c8;
 				}
 			}
 
@@ -72,7 +76,7 @@
 		font-weight: 800;
 
 		&.muted {
-			color: #CAC8C8;
+			color: #cac8c8;
 		}
 	}
 
@@ -82,5 +86,46 @@
 		align-items: flex-end;
 		gap: 0.5rem;
 		padding: 2rem;
+	}
+}
+
+.logoItem {
+	position: relative;
+}
+
+.hoverVideo {
+	position: fixed;
+	inset: 0;
+	width: 100vw;
+	height: 100vh;
+	object-fit: cover;
+	z-index: -1;
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 250ms ease-out;
+	background-color: black;
+}
+
+.hoverVideoReady {
+	opacity: 1;
+}
+
+.mobileVideo {
+	@media (max-width: 768px) {
+		inset: auto;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 85vw;
+		height: auto;
+		max-height: 75vh;
+		object-fit: contain;
+		background-color: transparent;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.hoverVideo {
+		display: none;
 	}
 }
