@@ -99,9 +99,9 @@ export function ArtefactDetail({ item }: { item: ArtefactsItem }) {
         </div>
       )}
 
-      <div className={styles.infoWithDivider}>
-        <div className={styles.divider} />
+      <div className={styles.divider} />
 
+      <div className={styles.infoWithDivider}>
         <div className={styles.info}>
           <div className={styles.infoContent}>
             <div>
