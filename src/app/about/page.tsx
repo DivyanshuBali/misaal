@@ -58,7 +58,7 @@ const sections: AccordionSection[] = [
           <span className={styles.year}>2023</span>
           <div>
             <span className={styles.role}>Exchange Program</span>
-            <span className={styles.place}>ETSAM Mumbai</span>
+            <span className={styles.place}>ETSAM, Madrid</span>
           </div>
         </div>
         <div className={styles.experienceRow}>
