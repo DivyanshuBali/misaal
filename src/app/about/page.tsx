@@ -9,10 +9,12 @@ const sections: AccordionSection[] = [
     content: (
       <div className={styles.prose}>
         <p>
-          I am convinced in the power of fiction. Through imagination, the
-          architect composes the materials to create the immaterial. his ability
-          to stir sense of wonder in all who encounter it is that which inspires
-          me.
+          Studies on the contemporary Indian condition—through both the archive
+          and the workshop—to understand how the historical persists within the
+          present. Rather than reconstructing history or defining an essence,
+          the inquiry focuses on tendencies that remain embedded in everyday
+          constructions but often go unnoticed. Through processes of making,
+          these tendencies are worked with, and engaged architecturally
         </p>
       </div>
     ),
